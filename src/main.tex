@@ -1,0 +1,95 @@
+\documentclass[10pt,oneside,draft]{book}
+\usepackage[utf8]{inputenc}
+
+\usepackage{gensymb}
+\usepackage{subcaption}
+\usepackage{blindtext}
+\usepackage[colorlinks=true]{hyperref}
+\usepackage[a4paper, margin=1in]{geometry}
+\usepackage{float}
+\usepackage[user,titleref]{zref}
+\usepackage{siunitx}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{sectsty}
+\usepackage[
+    textcolor=black,
+    textsize=small,
+    linecolor=red,
+    bordercolor=black,
+    backgroundcolor=grey!5,
+]{todonotes}
+
+\setlength\parindent{24pt}
+\usepackage{fancyhdr}% http://ctan.org/pkg/fancyhdr
+
+\usepackage[dvipsnames]{xcolor}% http://ctan.org/pkg/xcolor
+%\definecolor{UniPurple}{RGB}{76,11,113}
+%\definecolor{UniBlueGreen}{RGB}{0,169,163}
+
+
+\fancypagestyle{myheader}{%
+  \fancyhf{}% Clear all headers/footers
+  %\fancyhead[L]{\includegraphics[width=5cm]{Figures/Picture1}}% Header Centred
+  %\fancyhead[L]{2022.05.19}
+  \fancyhead[R]{2022.05.19\quad Deliverable 01}
+  \fancyfoot[C]{\thepage}% Footer Centred
+  %\fancyfoot[C]{\textcolor{UniPurple}{www.unipartners.nl}}
+  \renewcommand{\headrulewidth}{0pt}% 2pt header rule
+  %\renewcommand{\headrule}{\hbox to\headwidth{\color[RGB]{0,169,163}\leaders\hrule height \headrulewidth\hfill}}
+  \renewcommand{\footrulewidth}{0pt}% No footer rule
+}
+\setlength{\headheight}{21pt}%
+\pagestyle{myheader}
+%\sectionfont{\color{UniPurple}}
+
+\usepackage{draftwatermark}
+\SetWatermarkColor[gray]{0.9}
+\SetWatermarkText{\textsf{DRAFT}}
+\SetWatermarkScale{3}
+
+
+\hypersetup{
+    colorlinks=true,
+    citecolor=black,
+    linkcolor=UniBlueGreen,
+    filecolor=magenta,
+    urlcolor=cyan,
+    pdftitle={Overleaf Example},
+    pdfpagemode=FullScreen,
+    }
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\title{Multi-Life Cycle Assessment}
+\author{BR Energy for Blue Cycle\\ Alberto Rosas}
+\date{May, 2022}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+%%%%
+\maketitle
+\newpage \tableofcontents
+%%%%%%%%%%%%%%%%%%%%% CONTENT
+\newpage \include{00_Preface}
+\newpage \include{01_Summary}
+\newpage \include{02_Introduction}
+\newpage \include{03_Procedures}
+\newpage \include{04_GOAL & SCOPE}
+\newpage \include{05_INVENTORY ANALYSIS}
+\newpage \include{06_IMPACT ASSESSMENT}
+\newpage \include{07_INTERPRETATION}
+\newpage \include{08_Conclusions}
+%%%%%%%%%%%%%%%%%%%%% BIBLIOGRAPHY
+\bibliographystyle{IEEEtran}
+\newpage
+\addcontentsline{toc}{section}{References}
+\bibliography{main}
+%%%%%%%%%%%%%%%%%%%%% APENDIX
+\newpage \appendix
+\etocsetlevel{chapter}{6}
+\vspace*{\fill}
+\addcontentsline{toc}{section}{Appendix}
+\section*{Appendix}\label{sec:appendix}
+\vspace*{\fill}
+\newpage \include{10_Appendix}
+%%%%
+\end{document}
