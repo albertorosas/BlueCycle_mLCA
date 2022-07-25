@@ -1,4 +1,42 @@
-\chapter{Inventory Analysis (Assessment, Characterization)}\label{ch:inventoryanalysis}
+\chapter{Inventory Analysis}\label{ch:inventoryanalysis}
+
+%TOPIC: GENERAL STATEMENT
+This section describes the collection of data, together with their validation and a detailed description of the modelled unit processes.
+Like so, an explanation and accounting of reference flows are provided.
+Essential parameters and variables are introduced.
+
+\clearpage
+\section{Single Loop}\label{sec:singleloop}
+
+The modelling of a three-loop system required preparing the simulation of a single-cycle.
+By commencing with a single loop, it became possible to identify those unit processes with higher emission contributions and allowed for a process-specific balance of the mass flow.
+As previously mentioned, starting conditions for all product systems were identical.
+However, differences become apparent right after the sorting process.
+
+\section*{Mechanical}
+
+%FIGURE: MECHANICAL SANKEY DIAGRAM
+\begin{figure}[H]{\textwidth}
+   \includegraphics[width=1\linewidth]{Figures/D7_SankeyMechanical}
+   \caption{Disposal}
+   \label{fig:7_sankey_mechanical}
+\end{figure}
+
+%TOPIC: SORTING
+The first unit process (SORTED) was represented as a market activity from the ecoinvent database.
+This process, being a market activity, meant that its emissions were those which started at the gate of any activity labelled as 'waste polyethene, for recycling, sorting.'
+They regard not the long chain of previously inquired emissions from the manufacturing, but it accounts only for those concerning the most recent sorting activity.
+Although no additional distances were added to the original market activity, it already represents the consumption mix of the product in the given geography (Europe without Switzerland).
+Output was set at 1 kg.
 
 
-This is a inventory analysis
+
+
+\section*{Chemical}
+
+%FIGURE: CHEMICAL SANKEY DIAGRAM
+\begin{figure}[H]{\textwidth}
+   \includegraphics[width=1\linewidth]{Figures/D7_SankeyChemical}
+   \caption{Disposal}
+   \label{fig:7_sankey_chemical}
+\end{figure}
