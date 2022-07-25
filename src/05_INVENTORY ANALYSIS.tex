@@ -8,7 +8,7 @@ Essential parameters and variables are introduced.
 \clearpage
 \section{One Loop}\label{sec:singleinventory}
 %TOPIC: Intro to Single Loop
-The modelling of a three-loop system required preparing the simulation of a single-cycle.
+The modelling of a three-loop system required first to prepare the simulation of a single cycle.
 By commencing with a single loop, it became possible to identify those unit processes with higher emission contributions and allowed for a process-specific balance of the mass flow.
 As previously mentioned, starting conditions for all product systems were identical.
 However, differences become apparent right after the sorting process.
@@ -18,14 +18,14 @@ However, differences become apparent right after the sorting process.
 %FIGURE: MECHANICAL SANKEY DIAGRAM
 \begin{figure}[H]{\textwidth}
    \includegraphics[width=1\linewidth]{Figures/D7_SankeyMechanical}
-   \caption{Disposal}
+   \caption{Sankey Diagram, Mechanical Recycling, 1,000 kg at input}
    \label{fig:7_sankey_mechanical}
 \end{figure}
 
 %TOPIC: SORTING
 The first unit process (SORTING) was represented as a market activity from the ecoinvent database.
 This process, being a market activity, meant that its emissions were those which started at the gate of any activity labelled as 'waste polyethylene, for recycling, sorting.'
-They regard not the long chain of previously inquired emissions from the manufacturing, but it accounts only for those concerning the most recent sorting activity.
+They regard not the chain of previously inquired emissions from the manufacturing, but it accounts only for those concerning the most recent sorting activity.
 Although no additional distances were added to the original market activity, it already represents the consumption mix of the product in the given geography (Europe without Switzerland).
 Output was set at 1 kg.
 
@@ -36,7 +36,9 @@ A similar list was extracted for every unit process.
 All elementary flows were listed in each, and the numerical rules regarding their mass flow were detailed.
 For example, at \autoref{tab:my-table1} it can be recognized the fragment of output flow which is destined to incineration (PLAS INCINERATION) and the portion which is considered available to the subsequent process (PLAS).
 In this case, it was established a requirement of 1.18 PLAS input for every unit of product output (.8 PLAS INCINERATION + .2 PLAS). \footnote[1]{The name selected for flows has no greater impact on output calculation. The most important requirement is the establish the intended mass proportion between in and out every process}
-Keep in mind
+The data used at INCINERATION represents an average European waste-to-energy plant for the thermal treatment of municipal solid waste with typical technology used in Europe to meet the legal requirements.
+Environmental impacts regarding waste collection, transport or any pretreatment of the waste were not included.
+\autoref{fig:incineration} shows the logic behind INCINERATION inventory.
 
 %TABLE: INVENTORY EXTRACT
 % Please add the following required packages to your document preamble:
@@ -79,14 +81,10 @@ the one sent to incineration and the one sent to recycling.
 (Endmost product flow can be seen in \autoref{tab:mechanicalintermediateflows})
 Similarly, a transformation occurs at every unit process, which typically reduces the original input in the case of recycling LCAs.
 The values used in this simulation (.8 and .2) are considered a typical representation of the technological limitations that mechanical recycling has over DKR 350 plastic streams.
+This process accounted for the elementary flows required for segregating, cleaning, sorting and grinding whole plastic pieces into smaller flakes.
+The grinding phase considered the usage of shredders and their electricity consumption.
 
-%TABLE: Intemediate flows at single-loop, mechanical recycling
-\begin{table}[H]
-\caption{Intermediate flows at One Cycle, Mechanical Recycling}
-\label{tab:mechanicalintermediateflows}
-\includegraphics[width=\textwidth]{Figures/DT_M_SingleLoop_RESULTS}
-\end{table}
-
+%TOPIC: MOULDING AND THE CREDITING FORMULA %EQUATION: CREDITS
 Subsequently, the combination with a virgin material stream is mimicked at MOULDING.
 Here, the recyclable fraction from GRINDING is merged with a 75\% portion of virgin material.
 Regarding the awarded emissions, it is essential to consider that also at MOULDING, a credit for the avoided recycled product was implemented.
@@ -94,19 +92,25 @@ That is, from the otherwise 100\% utilization of virgin material, the MECHANICAL
 This crediting occurs aside from the embedded emissions incurred by processing the mentioned recycled product.
 \autoref{eq:equation} details on the mathematical expression.
 
-
-
+%EQUATION: CREDITS
 \begin{equation}
-    \includegraphics[width=.8\textwidth, left]{Figures/DT_FORMULA}
+    \includegraphics[width=.8\textwidth, center]{Figures/DT_FORMULA}
     \caption{Credited emissions calculation}
     \label{eq:equation}
 \end{equation}
 
+%TOPIC:
+    %PENDING: FULL PARAGRAPH
+\todo[inline]{\fontfamily{cmss}\selectfont
+{FALTA
+}}
 
-
-
-
-
+%TABLE: Intemediate flows at single-loop, mechanical recycling
+\begin{table}[H]
+\caption{Intermediate flows at One Cycle, Mechanical Recycling}
+\label{tab:mechanicalintermediateflows}
+\includegraphics[width=\textwidth]{Figures/DT_M_SingleLoop_RESULTS}
+\end{table}
 
 \section*{Chemical}\label{sec:chemical}
 
@@ -117,16 +121,29 @@ This crediting occurs aside from the embedded emissions incurred by processing t
    \label{fig:7_sankey_chemical}
 \end{figure}
 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \section{Three Loops}\label{sec:threeinventory}
+
 
 \section*{Mechanical}\label{sec:mechanical3}
 
+%FIGURE: MECHANICAL COMPUTATIONAL MODELING
+\begin{figure}[H]{\textwidth}
+   \includegraphics[width=1\linewidth]{Figures/DU_M_3Loops_OpenModel}
+   \caption{Computational representation of multi cycle mechanical recycling}
+   \label{fig:U_M_CompuModel}
+\end{figure}
 
 
 
-
-
-
+%TABLE: Intemediate flows at 3 loops, mechanical recycling
+\begin{table}[H]
+\caption{Intermediate flows at three cycles, Mechanical Recycling}
+\label{tab:mechanicalintermediateflows3F}
+\includegraphics[width=\textwidth]{Figures/DT_M_3Loops_RESULTS}
+\end{table}
 
 
 
