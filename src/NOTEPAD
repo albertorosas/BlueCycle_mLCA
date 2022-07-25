@@ -1,0 +1,43 @@
+LCA Is not a Bullet proof process
+We putting 1,000 kg at the output because...
+We model a composition of materials but in reality some process have "zero emission" so we replace it all with a single one.
+Explain the CUTOFF methodology
+Data quality methodologies are left to the predetermined by the databases.
+We assume no landfill
+A description of the parameters used.
+We go for IPCC 2013 Impact assessment, ALWAYS. #fuck characterization factors.
+
+
+%% TEXT:
+
+Although the initial modeling contemplated specific sources of plastic streams. The availability of data obliged to simply the calculation to the ones coming from 100% polyethylene. This is considered valid on the premise that local conditions resemble those of described material recovery facilities, and further expose the plastic stream coming a single source.
+
+In the model, meanwhile the initial point is consider waste polyethylene market. This emission are found to be similar quite similar from the sorting treatment process.
+
+Regarding transportation, is was found from early descriptions of the process that the total distances across different product systems were very similar (280 km of both chemical and mechanical recycling). Therefore, transportation was crossed out for both systems. Particularly in this case it is considered to be beneficial given the contrasting ambition of this LCA. Distances, use phases, etc. seemed blaaa...
+
+Landfill of the ash is considered, but even that is planned so change
+
+Meanwhile we are trying best, the pyrolisis process still lack quite some smaller emitters. Only the very most important are bein taken into account and lleaves space to being somewhat unjust to mechanical
+
+
+
+TODO:
+
+Micro model chemical recycling with the energy as avoided product.
+    PUT A EMISSION TO AIR, OR REPLICATE THE ONE FROM A COMBUSTION?
+
+
+WORDS:
+
+
+
+Clear to see how we are not even able to recycle that much at the mass balance. After all 75% comes from new
+
+
+So por ejemplo el lorry, podriamos necesitar de la proporcion necesaria para contruir un lorry entero... pero obvio no
+
+
+
+
+Steam crackers are used to produce short olefins from naphtha. The feed stream is diluted with steam and then led through a furnace, where it is heated to a high temperature (around 850 °C) for a very short time (milliseconds). Temperature and residence time define the different yields of products. A cracker can be broken down into three separate sections: pyrolysis, primary fractionation/compression and product fractionation. The product stream leaving the cracking furnace is quenched to prevent further reactions.  The background system is addressed as follows:  Electricity, Thermal energy: The electricity (and thermal energy as by-product) used is modelled according to the individual country-specific situation. The country-specific modelling is achieved on multiple levels. Firstly the individual power plants in service are modelled according to the current national grid. This includes net losses and imported electricity. Second, the national emission and efficiency standards of the power plants are modelled. Third, the country-specific fuel supply (share of resources used, by import and / or domestic supply) including the country-specific properties (e.g. element and energy contents) are accounted for. Fourth, the import, transport, mining and exploration processes for the energy carrier supply chain are modelled according to the specific situation of each power-producing country. The different mining and exploration techniques (emissions and efficiencies) in the different exploration countries are accounted for according to current engineering knowledge and information.  Steam: The steam supply is modelled according to the individual country-specific situation with regard to the technology efficiencies and energy carriers used. Efficiencies range from 84% to 94% in relation to the representative energy carrier (gas, oil, coal). Coal, crude oil and natural gas used for the generation of steam are modelled according to the specific import situation (see electricity).  Transports: All relevant and known transport processes used are included. Overseas transport including rail and truck transport to and from major ports for imported bulk resources are included. Furthermore all relevant and known pipeline and / or tanker transport of gases and oil imports are included.   Energy carriers: Coal, crude oil, natural gas and uranium are modelled according to the specific import situation (see electricity).  Refinery products: Diesel, gasoline, technical gases, fuel oils, basic oils and residues such as bitumen are modelled via a country-specific, refinery parameterized model. The refinery model represents the current national standard in refinery techniques (e.g. emission level, internal energy consumption,...) as well as the individual country-specific product output spectrum, which can be quite different from country to country. Hence the refinery products used show the individual country-specific use of resources. The supply of crude oil is modelled, again, according to the country-specific crude oil situation with the respective properties of the resources.
