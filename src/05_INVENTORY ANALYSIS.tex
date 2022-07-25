@@ -6,14 +6,14 @@ Like so, an explanation and accounting of reference flows are provided.
 Essential parameters and variables are introduced.
 
 \clearpage
-\section{Single Loop}\label{sec:singleloop}
-
+\section{One Loop}\label{sec:singleinventory}
+%TOPIC: Intro to Single Loop
 The modelling of a three-loop system required preparing the simulation of a single-cycle.
 By commencing with a single loop, it became possible to identify those unit processes with higher emission contributions and allowed for a process-specific balance of the mass flow.
 As previously mentioned, starting conditions for all product systems were identical.
 However, differences become apparent right after the sorting process.
 
-\section*{Mechanical}
+\section*{Mechanical}\label{sec:mechanical}
 
 %FIGURE: MECHANICAL SANKEY DIAGRAM
 \begin{figure}[H]{\textwidth}
@@ -23,16 +23,92 @@ However, differences become apparent right after the sorting process.
 \end{figure}
 
 %TOPIC: SORTING
-The first unit process (SORTED) was represented as a market activity from the ecoinvent database.
-This process, being a market activity, meant that its emissions were those which started at the gate of any activity labelled as 'waste polyethene, for recycling, sorting.'
+The first unit process (SORTING) was represented as a market activity from the ecoinvent database.
+This process, being a market activity, meant that its emissions were those which started at the gate of any activity labelled as 'waste polyethylene, for recycling, sorting.'
 They regard not the long chain of previously inquired emissions from the manufacturing, but it accounts only for those concerning the most recent sorting activity.
 Although no additional distances were added to the original market activity, it already represents the consumption mix of the product in the given geography (Europe without Switzerland).
 Output was set at 1 kg.
 
+%TOPIC: GRINDING % OTHER %TABLE: INVENTORY EXTRACT
+Following SORTING came GRINDING \& OTHERS.
+From \autoref{tab:my-table1} is possible to inspect the most considerable input and outputs registered at the activity.
+A similar list was extracted for every unit process.
+All elementary flows were listed in each, and the numerical rules regarding their mass flow were detailed.
+For example, at \autoref{tab:my-table1} it can be recognized the fragment of output flow which is destined to incineration (PLAS INCINERATION) and the portion which is considered available to the subsequent process (PLAS).
+In this case, it was established a requirement of 1.18 PLAS input for every unit of product output (.8 PLAS INCINERATION + .2 PLAS). \footnote[1]{The name selected for flows has no greater impact on output calculation. The most important requirement is the establish the intended mass proportion between in and out every process}
+Keep in mind
+
+%TABLE: INVENTORY EXTRACT
+% Please add the following required packages to your document preamble:
+% \usepackage{multirow}
+% \usepackage{graphicx}
+\begin{table}[H]
+\caption{Inventory extract from GRINDING and OTHERS, Mechanical Recycling}
+\label{tab:my-table1}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{llll}
+\multicolumn{4}{l}{\multirow{2}{*}{\textbf{\begin{tabular}[c]{@{}l@{}}1.2 GRINDING \& OTHERS \\ plastic flake production, consumer electronics, for recycling, by grinding/shredding, formal sector recycling | Cutoff, S\end{tabular}}}} \\
+\multicolumn{4}{l}{}                                                                                                                                                                                                                      \\
+\textbf{INPUT - Flow}                                                   & \textbf{Category}                                                                 & \textbf{Amount}                      & \textbf{Unit}                        \\
+PLAS                                                                    & **MECHANICAL                                                                      & 1.18                                 & kg                                   \\
+Water, turbine use,   unspecified natural origin                        & Elementary flows/Resource/in water                                                & 0.342788                             & m3                                   \\
+Oxygen                                                                  & Elementary flows/Resource/in air                                                  & 0.09807                              & kg                                   \\
+Coal, hard, unspecified, in   ground                                    & Elementary flows/Resource/in ground                                               & 0.05715                              & kg                                   \\
+Energy, potential (in   hydropower reservoir), converted                & Elementary flows/Resource/in water                                                & 0.051189                             & MJ                                   \\
+\multicolumn{1}{c}{…}                                                   & \multicolumn{1}{c}{…}                                                             & \multicolumn{1}{c}{…}                & \multicolumn{1}{c}{…}                \\
+\textbf{OUTPUT - Flow}                                                  & \textbf{Category}                                                                 & \textbf{Amount}                      & \textbf{Unit}                        \\
+Radon-222                                                               & Elementary flows/Emission to air/low population density, long-term                & 2.821562                             & kBq                                  \\
+Heat, waste                                                             & Elementary flows/Emission to air/high population density                          & 0.901193                             & MJ                                   \\
+PLAS INCINERATION                                                       & **MECHANICAL                                                                      & 0.8                                  & kg                                   \\
+Noble gases, radioactive,   unspecified                                 & Elementary flows/Emission to air/low population density                           & 0.659818                             & kBq                                  \\
+Water                                                                   & Elementary flows/Emission to water/unspecified                                    & 0.350212                             & m3                                   \\
+Heat, waste                                                             & Elementary flows/Emission to water/surface water                                  & 0.207723                             & MJ                                   \\
+PLAS                                                                    & **MECHANICAL                                                                      & 0.2                                  & kg                                   \\
+Carbon dioxide, fossil                                                  & Elementary flows/Emission to air/high population density                          & 0.161297                             & kg                                   \\
+Carbon dioxide, fossil                                                  & Elementary flows/Emission to air/low population density                           & 0.086844                             & kg                                   \\
+\multicolumn{1}{c}{…}                                                   & \multicolumn{1}{c}{…}                                                             & \multicolumn{1}{c}{…}                & \multicolumn{1}{c}{…}
+\end{tabular}%
+}
+\end{table}
+
+%TOPIC: Intro to the sankey. %FIGURE: MECHANICAL SANKEY DIAGRAM
+The continuing formulation of material balance across the multiple processes inside the product system results in the diffusion and reduction of main product streams.
+A visual representation of such is presented in \autoref{fig:7_sankey_mechanical}
+As can be seen, the total GRINDING product output accounts for the addition of the material lost in the process;
+the one sent to incineration and the one sent to recycling.
+(Endmost product flow can be seen in \autoref{tab:mechanicalintermediateflows})
+Similarly, a transformation occurs at every unit process, which typically reduces the original input in the case of recycling LCAs.
+The values used in this simulation (.8 and .2) are considered a typical representation of the technological limitations that mechanical recycling has over DKR 350 plastic streams.
+
+%TABLE: Intemediate flows at single-loop, mechanical recycling
+\begin{table}[H]
+\caption{Intermediate flows at One Cycle, Mechanical Recycling}
+\label{tab:mechanicalintermediateflows}
+\includegraphics[width=\textwidth]{Figures/DT_M_SingleLoop_RESULTS}
+\end{table}
+
+Subsequently, the combination with a virgin material stream is mimicked at MOULDING.
+Here, the recyclable fraction from GRINDING is merged with a 75\% portion of virgin material.
+Regarding the awarded emissions, it is essential to consider that also at MOULDING, a credit for the avoided recycled product was implemented.
+That is, from the otherwise 100\% utilization of virgin material, the MECHANICAL product system receives credit on the scale of 25\% for the utilization of the recycled material.
+This crediting occurs aside from the embedded emissions incurred by processing the mentioned recycled product.
+\autoref{eq:equation} details on the mathematical expression.
 
 
 
-\section*{Chemical}
+\begin{equation}
+    \includegraphics[width=.8\textwidth, left]{Figures/DT_FORMULA}
+    \caption{Credited emissions calculation}
+    \label{eq:equation}
+\end{equation}
+
+
+
+
+
+
+
+\section*{Chemical}\label{sec:chemical}
 
 %FIGURE: CHEMICAL SANKEY DIAGRAM
 \begin{figure}[H]{\textwidth}
@@ -40,3 +116,28 @@ Output was set at 1 kg.
    \caption{Disposal}
    \label{fig:7_sankey_chemical}
 \end{figure}
+
+\section{Three Loops}\label{sec:threeinventory}
+
+\section*{Mechanical}\label{sec:mechanical3}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\section*{Chemical}\label{sec:chemical3}
