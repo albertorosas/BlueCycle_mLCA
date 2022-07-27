@@ -1,4 +1,4 @@
-%\usepackage[T1]{fontenc}
+%\usepackage[T1]{fontenc}%\usepackage[T1]{fontenc}
 \chapter{Inventory Analysis}\label{ch:inventoryanalysis}
 
 %TOPIC: GENERAL STATEMENT ✔
@@ -13,7 +13,7 @@ Essential parameters and variables are introduced.
 The modelling of a three-loop system required first to prepare the simulation of a single cycle.
 By commencing with a single loop, it became possible to identify those unit processes with higher emission contributions and allowed for a process-specific balance of the mass flow.
 As previously mentioned, starting conditions for all product systems were identical.
-However, differences become apparent right after the sorting process.
+However, differences become apparent right after the SORTING process.
 
 
 \section*{Mechanical}\label{sec:mechanical}
@@ -39,16 +39,26 @@ They do not regard the chain of the previous emissions inquired from the manufac
 Although no additional distances were added to the original market activity, it already represents the consumption mix of the product in the given geography (Europe without Switzerland).
 Output was set at 1 kg.
 
-%TOPIC: GRINDING % OTHER %TABLE: INVENTORY EXTRACT
+%TOPIC: GRINDING % OTHER ✔
 Following SORTING came GRINDING \& OTHERS.
-From \autoref{tab:my-table1} is possible to inspect the most considerable input and outputs registered at the activity.
-A similar list was extracted for every unit process.
+Here, a 1.18 kg per kg input was considered.
+This addition to material demand compensated for the process losses, reportedly ranging between 15 to 18\%.
+In the same way, the remaining fraction is separated into INCINERATION (64\%) and MOULDING (36\%)
+As discussed previously, this segregation relates to technological limitations associated with mechanical recycling.
+
+%TOPIC: Abstract from MOULDING ✔ %TABLE: INVENTORY EXTRACT MOULDING
+From \autoref{tab:my-tableBUYA} it is possible to inspect the most considerable input and outputs registered at the MOULDING process.
+A similar list could be extracted for every unit process.
 All elementary flows were listed in each, and the numerical rules regarding their mass flow were detailed.
-For example, at \autoref{tab:my-table1} it can be recognized the fragment of output flow which is destined to incineration (PLAS INCINERATION) and the portion which is considered available to the subsequent process (PLAS).
-In this case, it was established a requirement of 1.18 PLAS input for every unit of product output (.64 PLAS INCINERATION + .36 PLAS)\cite{tech}. \footnote[1]{The name selected for flows has no greater impact on output calculation. The most important requirement is the establish the intended mass proportion between in and out every process}
-The data used at INCINERATION represents an average European waste-to-energy plant for the thermal treatment of municipal solid waste with typical technology used in Europe to meet the legal requirements.
-Environmental impacts regarding waste collection, transport or any pretreatment of the waste were not included.
-\autoref{fig:incineration} shows the logic behind INCINERATION inventory.
+For example, at \autoref{tab:my-tableBUYA}, the virgin and recycled material fractions used to manufacture the outcome product can be recognised.
+A relationship of 1 to 1.78 (36\% recycled, 64\% virgin) was established.
+This part was critical for the material balance and the emissions accounted for mechanical recycling.
+At this point, variations on the material composition could ament the resultant emissions and transform, for better or worse, the reprocessing capacity of this technology.
+
+%TOPIC: INCINERATION ✔
+The data used at INCINERATION represented the average waste-to-energy plant used for municipal solid waste.
+This example would comply with all European legal requirements and considers the utilization of standard technology.
+Environmental impacts regarding waste collection, transport or any waste pretreatment at INCINERATION were not included.
 
 %TABLE: INVENTORY EXTRACT MOULDING
 % Please add the following required packages to your document preamble:
@@ -90,36 +100,22 @@ Carbon dioxide, fossil                                   & Elementary flows/Emis
 }
 \end{table}
 
-%TOPIC: Intro to the sankey. %FIGURE: MECHANICAL SANKEY DIAGRAM
-%The continuing formulation of material balance across the multiple processes inside the product system results in the diffusion and reduction of main product streams.
-%A visual representation of such is presented in \autoref{fig:7_sankey_mechanical}
-%As can be seen, the total GRINDING product output accounts for the addition of the material lost in the process;
-%the one sent to incineration and the one sent to recycling.
-%(Endmost product flow can be seen in \autoref{tab:mechanicalintermediateflows})
-%Similarly, a transformation occurs at every unit process, which typically reduces the original input in the case of recycling LCAs.
-%The values used in this simulation (.8 and .2) are considered a typical representation of the technological limitations that mechanical recycling has over DKR 350 plastic streams.
-%This process accounted for the elementary flows required for segregating, cleaning, sorting and grinding whole plastic pieces into smaller flakes.
-%The grinding phase considered the usage of shredders and their electricity consumption.
+%TOPIC: Intro to the sankey. ✔ %FIGURE: MECHANICAL SANKEY DIAGRAM
+As anticipated, the ensuing formulation of material balances across the multiple processes inmost to the product system resulted in the diffusion and reduction of main product streams.
+A visual representation of such is presented in \autoref{fig:7_sankey_mechanical}
+As can be seen, the total GRINDING product output accounts for the summation of the material lost in the process;
+the one sent to incineration and the one sent to recycling.
+(Endmost product flow can be read from \autoref{tab:mechanicalintermediateflows})
+Similarly, a material transformation occurs in every unit process.
+This out-turn is typical and would reduce product outcomes at recycling LCAs.
 
-%TOPIC: MOULDING AND THE CREDITING FORMULA %EQUATION: CREDITS
-%Subsequently, the combination with a virgin material stream is mimicked at MOULDING.
-%Here, the recyclable fraction from GRINDING is merged with a 75\% portion of virgin material.
-%Regarding the awarded emissions, it is essential to consider that also at MOULDING, a credit for the avoided recycled product was implemented.
-%That is, from the otherwise 100\% utilization of virgin material, the MECHANICAL product system receives credit on the scale of 25\% for the utilization of the recycled material.
-%This crediting occurs aside from the embedded emissions incurred by processing the mentioned recycled product.
-%\autoref{eq:equation} details on the mathematical expression.
+%TOPIC: The crediting system ✔
+Also visible from \autoref{tab:my-tableBUYA} is the implementation of a credit mechanism.
+The mark TRUE under 'avoided product' signals the software to discount the emissions related to that stream, hence the negative sign in \autoref{tab:mechanicalintermediateflows}.
+The utilization of this crediting system replicates the avoided burden approach suggested by the governmental guidelines.
 
-%EQUATION: CREDITS
-\begin{equation}
-    \includegraphics[width=.8\textwidth, center]{Figures/DT_FORMULA}
-    \caption{Credited emissions calculation}
-    \label{eq:equation}
-\end{equation}
 
-%TOPIC:
-    %PENDING: FULL PARAGRAPH
-
-\newpage
+\clearpage
 \section*{Chemical}\label{sec:chemical}
 
 %FIGURE: CHEMICAL SANKEY DIAGRAM
@@ -177,7 +173,7 @@ Energy consumption is included and considered coming from within European region
 
 %TOPIC: EXTRUSION and COLLECTION ✔
 Finally, EXTRUSION and COLLECTION were modelled one after the other.
-EXTRUSION considered both typical distances from producer to consumer and the extrusion process of plastic film, precisely that of blow moulding.
+EXTRUSION considered both typical distances from producer to consumer and the extrusion processing of plastic film, especifically blow moulding.
 It was considered that 1 kg of this process would produce .976 kg of film product.
 Further on, no reduction in mass was contemplated for COLLECTION.
 
@@ -185,7 +181,7 @@ Further on, no reduction in mass was contemplated for COLLECTION.
 \autoref{tab:C_MASSFLOW_1CYCLE} summarizes the intermediate flows generated at the CHEMICAL product system for a single recycling cycle.
 As can be seen, just over 40\% of the original input material comes available for the next cycle and only a total of 162 kg are attributed to process losses.
 It is worth noting that these streams may be slightly different according to diversity across process suppliers.
-Additionally, specific mass quantities may vary based on varying efficiencies.
+Additionally, specific mass quantities may vary based on irregular efficiencies.
 Product flows worthy of credit are also in view.
 These are located at the bottom of the table as their aggregation results in negative values.
 
