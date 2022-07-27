@@ -1,4 +1,4 @@
-%\usepackage[T1]{fontenc}%\usepackage[T1]{fontenc}
+%\usepackage
 \chapter{Inventory Analysis}\label{ch:inventoryanalysis}
 
 %TOPIC: GENERAL STATEMENT ✔
@@ -198,7 +198,7 @@ These are located at the bottom of the table as their aggregation results in neg
 \textbf{INPUT - Flow}                               & \textbf{Category}                                                                                                                                                                                                                             & \textbf{Amount}       & \textbf{Unit}        & \textbf{Avoided} & \textbf{Provider}                                                                                                                                 \\
 air                                                 & Resources/Resources from air/Renewable material resources from air                                                                                                                                                                            & 9.696647256           & kg                   &                          &                                                                                                                                                   \\
 Water, surface                                      & Elementary flows/Resource/in water                                                                                                                                                                                                            & 1.478418229           & kg                   &                          &                                                                                                                                                   \\
-C_NAPTHA                                            & **CHEMICAL                                                                                                                                                                                                                                    & 1                     & kg                   &                          & 1.3 C_PYROLYSIS                                                                                                                                   \\
+NAPTHA                                            & **CHEMICAL                                                                                                                                                                                                                                    & 1                     & kg                   &                          & 1.3 PYROLYSIS                                                                                                                                   \\
 uranium                                             & Resources/Resources from ground/Non-renewable energy                                                                                                                                                             & 0.91450002            & MJ                   &                          &                                                                                                                                                   \\
 Water, ground                                       & Elementary flows/Resource/in water                                                                                                                                                                                                            & 0.619929398           & kg                   &                          &                                                                                                                                                   \\
 Metamorphous rock, graphite containing,   in ground & Elementary flows/Resource/in ground                                                                                                                                                                                                           & 0.499275991           & kg                   &                          &                                                                                                                                                   \\
@@ -219,7 +219,7 @@ Carbon dioxide                                      & Elementary flows/Emission 
 Radon-222                                           & Elementary flows/Emission to air/unspecified                                                                                                                                                                                                  & 1.040408786           & kBq                  &                          &                                                                                                                                                   \\
 crude oil; 42.3 MJ/kg                               & Elementary flows/Resource/in ground                                                                                                                                                                                                           & 1                     & MJ                   &                          &                                                                                                                                                   \\
 water vapour                                        & Emissions/Emissions to air/Emissions to air, unspecified                                                                                                                                                                                      & 0.926488666           & kg                   &                          &                                                                                                                                                   \\
-C_ETHYLENE                                          & **CHEMICAL                                                                                                                                                                                                                                    & 0.65                  & kg                   & TRUE                     & Ethene (Ethylene), production mix \\
+ETHYLENE                                          & **CHEMICAL                                                                                                                                                                                                                                    & 0.65                  & kg                   & TRUE                     & Ethene (Ethylene), production mix \\
 ethene (ethylene)                                   & Materials production/Organic chemicals                                                                                                                                                                                                        & 0.65                  & kg                   &                          &                                                                                                                                                   \\
 Overburden (deposited)                              & Deposited goods/Stockpile goods                                                                                                                                                                                                               & 0.478940774           & kg                   &                          &                                                                                                                                                   \\
 Heat, waste                                         & Elementary flows/Emission to water/fresh water                                                                                                                                                                                                & 0.190182317           & MJ                   &                          &                                                                                                                                                   \\
@@ -247,6 +247,12 @@ The following section explains the considerations contained in the looping and h
    \label{fig:U_M_CompuModel}
 \end{figure}
 
+%TOPIC: About the Figure ✔ %FIGURE: MECHANICAL COMPUTATIONAL MODELING
+As aforementioned, the computative recreation of a three-loop system was achieved by concatenating that of a single cycle.
+\autoref{fig:U_M_CompuModel} shows this method attained inside OpenLCA software.
+Three copies of the primary process sequences were connected one after the other at COLLECTION towards SORTING without considerable material losses.
+\autoref{fig:U_M_CompuModel} also reinstates the ascription of the credits assigned at the MOULDING process for each of the cycles.
+
 %TABLE: Intemediate flows at 3 loops, mechanical recycling
 \begin{table}[H]
 \caption{Intermediate flows at three cycles, Mechanical Recycling}
@@ -254,7 +260,11 @@ The following section explains the considerations contained in the looping and h
 \includegraphics[width=\textwidth]{Figures/DT_M_3Loops_MASSFFLOW}
 \end{table}
 
-\newpage
+%TOPIC: About the total mass flow ✔ %TABLE: Mass FLow, 3 cycles, Mechanical Recycling
+\autoref{tab:mechanicalintermediateflows3F}, at the very bottom, accounts for a total of 783.2 kg of avoided plastic material.
+However, material-wise, these three iterations of mechanical recycling rely on the supply of 1,392.3 virgin materials.
+That is almost as double what it initially "avoided".
+
 \section*{Chemical}\label{sec:chemical3}
 
 %FIGURE: CHEMICAL COMPUTATIONAL MODELING
