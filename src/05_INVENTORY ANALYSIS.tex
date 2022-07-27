@@ -1,18 +1,20 @@
-\usepackage[T1]{fontenc}
+%\usepackage[T1]{fontenc}
 \chapter{Inventory Analysis}\label{ch:inventoryanalysis}
 
-%TOPIC: GENERAL STATEMENT
+%TOPIC: GENERAL STATEMENT ✔
 This section describes the collection of data, together with their validation and a detailed description of the modelled unit processes.
 Like so, an explanation and accounting of reference flows are provided.
 Essential parameters and variables are introduced.
 
- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \section{Single Cycle}\label{sec:singleinventory}
-%TOPIC: Intro to Single Loop
+
+%TOPIC: Intro to Single Loop ✔
 The modelling of a three-loop system required first to prepare the simulation of a single cycle.
 By commencing with a single loop, it became possible to identify those unit processes with higher emission contributions and allowed for a process-specific balance of the mass flow.
 As previously mentioned, starting conditions for all product systems were identical.
 However, differences become apparent right after the sorting process.
+
 
 \section*{Mechanical}\label{sec:mechanical}
 
@@ -30,7 +32,7 @@ However, differences become apparent right after the sorting process.
 \includegraphics[width=\textwidth]{Figures/DT_M_1Loop_MASSFLOW}
 \end{table}
 
-%TOPIC: SORTING
+%TOPIC: SORTING ✔
 The first unit process (SORTING) was represented as a market activity from the ecoinvent database.
 This process, being a market activity, meant that its emissions were those which started at the gate of any activity labelled as 'waste polyethylene, for recycling, sorting.'
 They regard not the chain of previously inquired emissions from the manufacturing, but it accounts only for those concerning the most recent sorting activity.
@@ -109,6 +111,7 @@ Carbon dioxide, fossil                                                  & Elemen
 
 %TOPIC:
     %PENDING: FULL PARAGRAPH
+
 \newpage
 \section*{Chemical}\label{sec:chemical}
 
@@ -126,13 +129,13 @@ Carbon dioxide, fossil                                                  & Elemen
 \includegraphics[width=\textwidth]{Figures/DT_C_1Loop_MASSFLOWS}
 \end{table}
 
-%TOPIC: Description up to Pyrolysis
+%TOPIC: Description up to Pyrolysis ✔
 Like MECHANICAL, CHEMICAL's inventory began with the acquisition of 1,000 kg of DKR 350 plastic stream.
 Similarly, losses are attributed to the GRINDING process (16\%).
 However, the whole 84\% that remains is processed and sent to the pyrolytic reactor.
 Replicated in the software, this is now the input for the innermost step of this product system.
 
-%TOPIC: ABOUT PYROLISIS
+%TOPIC: ABOUT PYROLISIS ✔
 The PYROLYSIS process involves the thermal decomposition of solid material in an inert atmosphere.
 A change in chemical composition is induced by a specific and well-regulated increase in temperature.
 Even if respective portions may change depending on the product input and operating conditions, an output of 10-20\% char, 30-40\% syngas and 50-70\% oil is expected.
@@ -142,14 +145,14 @@ This intra-process recycled stream is modelled through a credit feature to the s
 Quantitatively, it was estimated at 1.56 kWh per kg.
 Solid waste (determined at 9\%) was sent to LANDFILL and accounted accordingly.
 
-%TOPIC: SANKEY CHEMICAL %FIGURE: CHEMICAL SANKEY DIAGRAM
+%TOPIC: SANKEY CHEMICAL ✔ %FIGURE: CHEMICAL SANKEY DIAGRAM
 \autoref{fig:7_sankey_chemical} shows the Sankey diagram attributed to a single cycle of the CHEMICAL product system.
 As can be seen, the initial product input is significantly broken down trough out the process.
 CHEMICAL recycling may begin with 1,000 kg of DKR 350 and have that converted into 400 kg of recycled material without relying in additional material inputs.
 Alike MECHANICAL recycling, this technology gets credited when replacing or avoiding the usage of any outer flow.
 Highlighted in blue, \autoref{fig:7_sankey_chemical} showcases which of the product flow received a credit under the current modelling methodology.
 
-%TOPIC: CRACKER and 2 TABLES  %TABLE: INVENTORY EXTRACT
+%TOPIC: CRACKER and 2 TABLES ✔ %TABLE: INVENTORY EXTRACT
 The STEAM CRACKER process is required to produce shorter olefins from the liquid pyrolytic product.
 The feed is diluted with steam and then led through a furnace, where it is heated to a high temperature (around 850 C) for a very short time.
 Coal, crude oil and natural gas used for steam generation are modelled according to the region.
@@ -157,7 +160,7 @@ However, a credit is earned for the 20\% fraction of gas recovered during the cr
 \autoref{tab:my-tablecumbia} shows the issuance of this credit together with a excerpt from the additional elementary flow at the inventory.
 15 and 65\% are the estimations used for the remaining gasoline and olefin product respectively
 
-%TOPIC: LDPE PRODUCTION
+%TOPIC: LDPE PRODUCTION ✔
 Subsequently, LDPE PRODUCTION replicates the emissions incurred by polymerization.
 After polymerization, the resulting polymer is fed into a hot melt extruder where some additives may be added.
 Next comes underwater pelletization.
@@ -165,13 +168,13 @@ The resulting product is then dried and degassed.
 The process began with a monomer and finished with a polymer pallet.
 Energy consumption is included and considered coming from within European regions.
 
-%TOPIC: EXTRUSION and COLLECTION
+%TOPIC: EXTRUSION and COLLECTION ✔
 Finally, EXTRUSION and COLLECTION were modelled one after the other.
 EXTRUSION considered both typical distances from producer to consumer and the extrusion process of plastic film, precisely that of blow moulding.
 It was considered that 1 kg of this process would produce .976 kg of film product.
 Further on, no reduction in mass was contemplated for COLLECTION.
 
-%TOPIC: About the table %TABLE: Intermediate flow, CHEMICAL Recycling
+%TOPIC: About the table ✔ %TABLE: Intermediate flow, CHEMICAL Recycling
 \autoref{tab:C_MASSFLOW_1CYCLE} summarizes the intermediate flows generated at the CHEMICAL product system for a single recycling cycle.
 As can be seen, just over 40\% of the original input material comes available for the next cycle and only a total of 162 kg are attributed to process losses.
 It is worth noting that these streams may be slightly different according to diversity across process suppliers.
@@ -224,8 +227,12 @@ gasoline (regular)                                  & Energy carriers and techno
 \end{table}
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Three Cycles}\label{sec:threeinventory}
+
+%TOPIC: Intro to 3 Cycles. ✔
+After single-cycle modelling, the simulation of a looped system became possible.
+This expansion from a single recycling cycle was paramount for the fulfilment of the functional unit.
+The following section explains the considerations contained in the looping and highlights its effects on the transformation of materials across the multi-life cycles.
 
 
 \section*{Mechanical}\label{sec:mechanical3}
