@@ -1,3 +1,4 @@
+
 \chapter{Inventory Analysis}\label{ch:inventoryanalysis}
 
 %TOPIC: GENERAL STATEMENT
@@ -5,7 +6,7 @@ This section describes the collection of data, together with their validation an
 Like so, an explanation and accounting of reference flows are provided.
 Essential parameters and variables are introduced.
 
-\clearpage
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Single Cycle}\label{sec:singleinventory}
 %TOPIC: Intro to Single Loop
 The modelling of a three-loop system required first to prepare the simulation of a single cycle.
@@ -22,6 +23,13 @@ However, differences become apparent right after the sorting process.
    \label{fig:7_sankey_mechanical}
 \end{figure}
 
+%TABLE: Intemediate flows at single-loop, mechanical recycling
+\begin{table}[b]
+\caption{Intermediate flows at One Cycle, Mechanical Recycling}
+\label{tab:mechanicalintermediateflows}
+\includegraphics[width=\textwidth]{Figures/DT_M_1Loop_MASSFLOW}
+\end{table}
+
 %TOPIC: SORTING
 The first unit process (SORTING) was represented as a market activity from the ecoinvent database.
 This process, being a market activity, meant that its emissions were those which started at the gate of any activity labelled as 'waste polyethylene, for recycling, sorting.'
@@ -30,22 +38,22 @@ Although no additional distances were added to the original market activity, it 
 Output was set at 1 kg.
 
 %TOPIC: GRINDING % OTHER %TABLE: INVENTORY EXTRACT
-Following SORTING came GRINDING \& OTHERS.
-From \autoref{tab:my-table1} is possible to inspect the most considerable input and outputs registered at the activity.
-A similar list was extracted for every unit process.
-All elementary flows were listed in each, and the numerical rules regarding their mass flow were detailed.
-For example, at \autoref{tab:my-table1} it can be recognized the fragment of output flow which is destined to incineration (PLAS INCINERATION) and the portion which is considered available to the subsequent process (PLAS).
-In this case, it was established a requirement of 1.18 PLAS input for every unit of product output (.8 PLAS INCINERATION + .2 PLAS). \footnote[1]{The name selected for flows has no greater impact on output calculation. The most important requirement is the establish the intended mass proportion between in and out every process}
-The data used at INCINERATION represents an average European waste-to-energy plant for the thermal treatment of municipal solid waste with typical technology used in Europe to meet the legal requirements.
-Environmental impacts regarding waste collection, transport or any pretreatment of the waste were not included.
-\autoref{fig:incineration} shows the logic behind INCINERATION inventory.
+%Following SORTING came GRINDING \& OTHERS.
+%From \autoref{tab:my-table1} is possible to inspect the most considerable input and outputs registered at the activity.
+%A similar list was extracted for every unit process.
+%All elementary flows were listed in each, and the numerical rules regarding their mass flow were detailed.
+%For example, at \autoref{tab:my-table1} it can be recognized the fragment of output flow which is destined to incineration (PLAS INCINERATION) and the portion which is considered available to the subsequent process (PLAS).
+%In this case, it was established a requirement of 1.18 PLAS input for every unit of product output (.64 PLAS INCINERATION + .36 PLAS)\cite{tech}. \footnote[1]{The name selected for flows has no greater impact on output calculation. The most important requirement is the establish the intended mass proportion between in and out every process}
+%The data used at INCINERATION represents an average European waste-to-energy plant for the thermal treatment of municipal solid waste with typical technology used in Europe to meet the legal requirements.
+%Environmental impacts regarding waste collection, transport or any pretreatment of the waste were not included.
+%\autoref{fig:incineration} shows the logic behind INCINERATION inventory.
 
 %TABLE: INVENTORY EXTRACT
 % Please add the following required packages to your document preamble:
 % \usepackage{multirow}
 % \usepackage{graphicx}
 \begin{table}[H]
-\caption{Inventory extract from GRINDING and OTHERS, Mechanical Recycling}
+\caption{Inventory extract from GRINDING \& OTHERS, Mechanical Recycling}
 \label{tab:my-table1}
 \resizebox{\textwidth}{!}{%
 \begin{tabular}{llll}
@@ -74,23 +82,23 @@ Carbon dioxide, fossil                                                  & Elemen
 \end{table}
 
 %TOPIC: Intro to the sankey. %FIGURE: MECHANICAL SANKEY DIAGRAM
-The continuing formulation of material balance across the multiple processes inside the product system results in the diffusion and reduction of main product streams.
-A visual representation of such is presented in \autoref{fig:7_sankey_mechanical}
-As can be seen, the total GRINDING product output accounts for the addition of the material lost in the process;
-the one sent to incineration and the one sent to recycling.
-(Endmost product flow can be seen in \autoref{tab:mechanicalintermediateflows})
-Similarly, a transformation occurs at every unit process, which typically reduces the original input in the case of recycling LCAs.
-The values used in this simulation (.8 and .2) are considered a typical representation of the technological limitations that mechanical recycling has over DKR 350 plastic streams.
-This process accounted for the elementary flows required for segregating, cleaning, sorting and grinding whole plastic pieces into smaller flakes.
-The grinding phase considered the usage of shredders and their electricity consumption.
+%The continuing formulation of material balance across the multiple processes inside the product system results in the diffusion and reduction of main product streams.
+%A visual representation of such is presented in \autoref{fig:7_sankey_mechanical}
+%As can be seen, the total GRINDING product output accounts for the addition of the material lost in the process;
+%the one sent to incineration and the one sent to recycling.
+%(Endmost product flow can be seen in \autoref{tab:mechanicalintermediateflows})
+%Similarly, a transformation occurs at every unit process, which typically reduces the original input in the case of recycling LCAs.
+%The values used in this simulation (.8 and .2) are considered a typical representation of the technological limitations that mechanical recycling has over DKR 350 plastic streams.
+%This process accounted for the elementary flows required for segregating, cleaning, sorting and grinding whole plastic pieces into smaller flakes.
+%The grinding phase considered the usage of shredders and their electricity consumption.
 
 %TOPIC: MOULDING AND THE CREDITING FORMULA %EQUATION: CREDITS
-Subsequently, the combination with a virgin material stream is mimicked at MOULDING.
-Here, the recyclable fraction from GRINDING is merged with a 75\% portion of virgin material.
-Regarding the awarded emissions, it is essential to consider that also at MOULDING, a credit for the avoided recycled product was implemented.
-That is, from the otherwise 100\% utilization of virgin material, the MECHANICAL product system receives credit on the scale of 25\% for the utilization of the recycled material.
-This crediting occurs aside from the embedded emissions incurred by processing the mentioned recycled product.
-\autoref{eq:equation} details on the mathematical expression.
+%Subsequently, the combination with a virgin material stream is mimicked at MOULDING.
+%Here, the recyclable fraction from GRINDING is merged with a 75\% portion of virgin material.
+%Regarding the awarded emissions, it is essential to consider that also at MOULDING, a credit for the avoided recycled product was implemented.
+%That is, from the otherwise 100\% utilization of virgin material, the MECHANICAL product system receives credit on the scale of 25\% for the utilization of the recycled material.
+%This crediting occurs aside from the embedded emissions incurred by processing the mentioned recycled product.
+%\autoref{eq:equation} details on the mathematical expression.
 
 %EQUATION: CREDITS
 \begin{equation}
@@ -101,30 +109,123 @@ This crediting occurs aside from the embedded emissions incurred by processing t
 
 %TOPIC:
     %PENDING: FULL PARAGRAPH
-
-%TABLE: Intemediate flows at single-loop, mechanical recycling
-\begin{table}[H]
-\caption{Intermediate flows at One Cycle, Mechanical Recycling}
-\label{tab:mechanicalintermediateflows}
-\includegraphics[width=\textwidth]{Figures/DT_M_1Loop_RESULTS}
-\end{table}
-
+\newpage
 \section*{Chemical}\label{sec:chemical}
 
 %FIGURE: CHEMICAL SANKEY DIAGRAM
 \begin{figure}[H]{\textwidth}
    \includegraphics[width=1\linewidth]{Figures/D7_SankeyChemical}
-   \caption{Disposal}
+   \caption{Sankey Diagram, Chemical Recycling, 1,000 kg at input.}
    \label{fig:7_sankey_chemical}
 \end{figure}
 
-%TOPIC:
-    %PENDING: WHOLE CHEMICAL DESCRIPTIon
+%TABLE: Intemediate flows at 3 loops, Chemical recycling
+\begin{table}[b]
+\caption{Intermediate flows at Single Cycle, Chemical Recycling}
+\label{tab:C_MASSFLOW_1CYCLE}
+\includegraphics[width=\textwidth]{Figures/DT_C_1Loop_MASSFLOWS}
+\end{table}
+
+%TOPIC: Description up to Pyrolysis
+Like MECHANICAL, CHEMICAL's inventory began with the acquisition of 1,000 kg of DKR 350 plastic stream.
+Similarly, losses are attributed to the GRINDING process (16\%).
+However, the whole 84\% that remains is processed and sent to the pyrolytic reactor.
+Replicated in the software, this is now the input for the innermost step of this product system.
+
+%TOPIC: ABOUT PYROLISIS
+The PYROLYSIS process involves the thermal decomposition of solid material in an inert atmosphere.
+A change in chemical composition is induced by a specific and well-regulated increase in temperature.
+Even if respective portions may change depending on the product input and operating conditions, an output of 10-20\% char, 30-40\% syngas and 50-70\% oil is expected.
+As mentioned, heat is required to run the reactor;
+however, it is possible to utilize this same synthetic gas output back into the furnace.
+This intra-process recycled stream is modelled through a credit feature to the scale of the avoided material, in this case, of natural gas.
+Quantitatively, it was estimated at 1.56 kWh per kg.
+Solid waste (determined at 9\%) was sent to LANDFILL and accounted accordingly.
+
+%TOPIC: SANKEY CHEMICAL %FIGURE: CHEMICAL SANKEY DIAGRAM
+\autoref{fig:7_sankey_chemical} shows the Sankey diagram attributed to a single cycle of the CHEMICAL product system.
+As can be seen, the initial product input is significantly broken down trough out the process.
+CHEMICAL recycling may begin with 1,000 kg of DKR 350 and have that converted into 400 kg of recycled material without relying in additional material inputs.
+Alike MECHANICAL recycling, this technology gets credited when replacing or avoiding the usage of any outer flow.
+Highlighted in blue, \autoref{fig:7_sankey_chemical} showcases which of the product flow received a credit under the current modelling methodology.
+
+%TOPIC: CRACKER and 2 TABLES  %TABLE: INVENTORY EXTRACT
+The STEAM CRACKER process is required to produce shorter olefins from the liquid pyrolytic product.
+The feed is diluted with steam and then led through a furnace, where it is heated to a high temperature (around 850 C) for a very short time.
+Coal, crude oil and natural gas used for steam generation are modelled according to the region.
+However, a credit is earned for the 20\% fraction of gas recovered during the cracking process.
+\autoref{tab:my-tablecumbia} shows the issuance of this credit together with a excerpt from the additional elementary flow at the inventory.
+15 and 65\% are the estimations used for the remaining gasoline and olefin product respectively
+
+%TOPIC: LDPE PRODUCTION
+Subsequently, LDPE PRODUCTION replicates the emissions incurred by polymerization.
+After polymerization, the resulting polymer is fed into a hot melt extruder where some additives may be added.
+Next comes underwater pelletization.
+The resulting product is then dried and degassed.
+The process began with a monomer and finished with a polymer pallet.
+Energy consumption is included and considered coming from within European regions.
+
+%TOPIC: EXTRUSION and COLLECTION
+Finally, EXTRUSION and COLLECTION were modelled one after the other.
+EXTRUSION considered both typical distances from producer to consumer and the extrusion process of plastic film, precisely that of blow moulding.
+It was considered that 1 kg of this process would produce .976 kg of film product.
+Further on, no reduction in mass was contemplated for COLLECTION.
+
+%TOPIC: About the table %TABLE: Intermediate flow, CHEMICAL Recycling
+\autoref{tab:C_MASSFLOW_1CYCLE} summarizes the intermediate flows generated at the CHEMICAL product system for a single recycling cycle.
+As can be seen, just over 40\% of the original input material comes available for the next cycle and only a total of 162 kg are attributed to process losses.
+It is worth noting that these streams may be slightly different according to diversity across process suppliers.
+Additionally, specific mass quantities may vary based on varying efficiencies.
+Product flows worthy of credit are also in view.
+These are located at the bottom of the table as their aggregation results in negative values.
+
+%TABLE: INVENTORY EXTRACT CRACKER
+% Please add the following required packages to your document preamble:
+% \usepackage{graphicx}
+\begin{table}[H]
+\centering
+\caption{Inventory extract from STEAM CRACKER, Chemical Recycling}
+\label{tab:my-tablecumbia}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{llllll}
+\multicolumn{2}{l}{\textbf{1.3.2 STEAM CRACKER Ethene (Ethylene),   production mix, at plant, from steam cracking, gaseous}}                                                                                                                                                                        &                       &                      &                          &                                                                                                                                                   \\
+\textbf{INPUT - Flow}                               & \textbf{Category}                                                                                                                                                                                                                             & \textbf{Amount}       & \textbf{Unit}        & \textbf{Avoided} & \textbf{Provider}                                                                                                                                 \\
+air                                                 & Resources/Resources from air/Renewable material resources from air                                                                                                                                                                            & 9.696647256           & kg                   &                          &                                                                                                                                                   \\
+Water, surface                                      & Elementary flows/Resource/in water                                                                                                                                                                                                            & 1.478418229           & kg                   &                          &                                                                                                                                                   \\
+C_NAPTHA                                            & **CHEMICAL                                                                                                                                                                                                                                    & 1                     & kg                   &                          & 1.3 C_PYROLYSIS                                                                                                                                   \\
+uranium                                             & Resources/Resources from ground/Non-renewable energy                                                                                                                                                             & 0.91450002            & MJ                   &                          &                                                                                                                                                   \\
+Water, ground                                       & Elementary flows/Resource/in water                                                                                                                                                                                                            & 0.619929398           & kg                   &                          &                                                                                                                                                   \\
+Metamorphous rock, graphite containing,   in ground & Elementary flows/Resource/in ground                                                                                                                                                                                                           & 0.499275991           & kg                   &                          &                                                                                                                                                   \\
+hard coal;  26.3 MJ/kg                              & Elementary flows/Resource/in ground                                                                                                                                                                                                           & 0.442132066           & MJ                   &                          &                                                                                                                                                   \\
+brown coal;  11.9 MJ/kg                             & Elementary flows/Resource/in ground                                                                                                                                                                                                           & 0.255490309           & MJ                   &                          &                                                                                                                                                   \\
+Energy, primary, from water power                   & Elementary flows/Resource/in water                                                                                                                                                                                                            & 0.135496211           & MJ                   &                          &                                                                                                                                                   \\
+Energy, primary, from wind power                    & Elementary flows/Resource/in air                                                                                                                                                                                                              & 0.021586974           & MJ                   &                          &                                                                                                                                                   \\
+Energy, primary, from solar energy                  & Elementary flows/Resource/in air                                                                                                                                                                                                              & 0.018054583           & MJ                   &                          &                                                                                                                                                   \\
+\multicolumn{1}{c}{…}                               & \multicolumn{1}{c}{…}                                                                                                                                                                                                                         & \multicolumn{1}{c}{…} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{…}    &                                                                                                                                                   \\
+                                                    &                                                                                                                                                                                                                                               &                       &                      &                          &                                                                                                                                                   \\
+\textbf{OUTPUT - Flow}                              & \textbf{Category}                                                                                                                                                                                                                             & \textbf{Amount}       & \textbf{Unit}        & \textbf{Avoided} & \textbf{Provider}                                                                                                                                 \\
+Krypton-85                                          & Elementary flows/Emission to air/unspecified                                                                                                                                                                                                  & 71.38053755           & kBq                  &                          &                                                                                                                                                   \\
+used air                                            & Emissions/Emissions to air/Emissions to air, unspecified                                                                                                                                                                                      & 8.483206536           & kg                   &                          &                                                                                                                                                   \\
+heat, district or industrial, natural   gas         & D:Electricity, gas, steam and air conditioning supply/35:Electricity,  & 7.044                 & MJ                   & TRUE                     & heat production, natural gas \\
+Heat, waste                                         & Elementary flows/Emission to air/unspecified                                                                                                                                                                                                  & 3.834943428           & MJ                   &                          &                                                                                                                                                   \\
+Hydrogen-3, Tritium                                 & Elementary flows/Emission to water/fresh water                                                                                                                                                                                                & 2.821897294           & kBq                  &                          &                                                                                                                                                   \\
+Carbon dioxide                                      & Elementary flows/Emission to air/unspecified                                                                                                                                                                                                  & 1.156838028           & kg                   &                          &                                                                                                                                                   \\
+Radon-222                                           & Elementary flows/Emission to air/unspecified                                                                                                                                                                                                  & 1.040408786           & kBq                  &                          &                                                                                                                                                   \\
+crude oil; 42.3 MJ/kg                               & Elementary flows/Resource/in ground                                                                                                                                                                                                           & 1                     & MJ                   &                          &                                                                                                                                                   \\
+water vapour                                        & Emissions/Emissions to air/Emissions to air, unspecified                                                                                                                                                                                      & 0.926488666           & kg                   &                          &                                                                                                                                                   \\
+C_ETHYLENE                                          & **CHEMICAL                                                                                                                                                                                                                                    & 0.65                  & kg                   & TRUE                     & Ethene (Ethylene), production mix \\
+ethene (ethylene)                                   & Materials production/Organic chemicals                                                                                                                                                                                                        & 0.65                  & kg                   &                          &                                                                                                                                                   \\
+Overburden (deposited)                              & Deposited goods/Stockpile goods                                                                                                                                                                                                               & 0.478940774           & kg                   &                          &                                                                                                                                                   \\
+Heat, waste                                         & Elementary flows/Emission to water/fresh water                                                                                                                                                                                                & 0.190182317           & MJ                   &                          &                                                                                                                                                   \\
+gasoline (regular)                                  & Energy carriers and technologies/Crude oil based fuels                                                                                                                                                                                        & 0.15                  & kg                   & TRUE                     & Gasoline (regular), consumption mix  \\
+\multicolumn{1}{c}{…}                               & \multicolumn{1}{c}{…}                                                                                                                                                                                                                         & \multicolumn{1}{c}{…} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{…}    &
+\end{tabular}%
+}
+\end{table}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\section{Three Loops}\label{sec:threeinventory}
+\section{Three Cycles}\label{sec:threeinventory}
 
 
 \section*{Mechanical}\label{sec:mechanical3}
@@ -136,25 +237,26 @@ This crediting occurs aside from the embedded emissions incurred by processing t
    \label{fig:U_M_CompuModel}
 \end{figure}
 
-
-
 %TABLE: Intemediate flows at 3 loops, mechanical recycling
 \begin{table}[H]
 \caption{Intermediate flows at three cycles, Mechanical Recycling}
 \label{tab:mechanicalintermediateflows3F}
-\includegraphics[width=\textwidth]{Figures/DT_M_3Loops_RESULTS}
+\includegraphics[width=\textwidth]{Figures/DT_M_3Loops_MASSFFLOW}
 \end{table}
 
-
-
-
-
-
-
-
-
-
-
-
-
+\newpage
 \section*{Chemical}\label{sec:chemical3}
+
+%FIGURE: CHEMICAL COMPUTATIONAL MODELING
+\begin{figure}[H]{\textwidth}
+   \includegraphics[width=1\linewidth]{Figures/DU_C_3Loops_OpenModel}
+   \caption{Computational representation of multi cycle chemical recycling}
+   \label{fig:U_C_CompuModel}
+\end{figure}
+
+%TABLE: Intemediate flows at 3 loops, Chemical recycling
+\begin{table}[H]
+\caption{Intermediate flows at three cycles, Mechanical Recycling}
+\label{tab:chemicalintermediateflows3F}
+\includegraphics[width=\textwidth]{Figures/DT_C_3Loops_MASSFLOW}
+\end{table}
