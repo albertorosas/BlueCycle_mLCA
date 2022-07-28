@@ -1,13 +1,15 @@
-\chapter{Impact Assessment (Environmental Analysis)}\label{ch:impactassesment}
+\chapter{Impact Assessment}\label{ch:impactassesment}
 
-%TOPIC: GENEANTL STAMENT
-This is a impact assessment hola jdlkdfjldkj
+%TOPIC: We doing IPCC 20a ✔
+The impact assessment section of LCA aims to evaluate the prospective environmental impacts attributed to each and all of the elementary flows registered at the inventory phase.
+Primarily, this calculation results from the association of the inventory data with a specific environmental impact category and category indicators.
+This method would allow for the emergence of a reduced numerical listing which proclaims to encompass the environmental consequences attributed to the whole of the product system's processes.
+Although there may be a great variety of impact assessment methodologies, each with a different logic behind the attribution of characterization, weighting and damage factors, this LCA exercise decided on utilizing IPCC GWP 20a.
+This decision is related to an ambition for simplification and the prioritization granted by the authorities and the originator of this study.
+Attached on \autoref{tab:IPCC} is a list of the impact factors utilized by the ecoinvent database over this specific assessment methodology.
+
 
 \section{One Loop}\label{sec:singleresults}
-
-%TOPIC: ABOUT CUT-OFF
-    %PENDING: FULL PARAGRAPH
-
 \section*{Mechanical}\label{sec:mechanical2}
 
 %FIGURE: MECHANICAL Bar GRaphs 1 LOOP
@@ -17,12 +19,21 @@ This is a impact assessment hola jdlkdfjldkj
    \label{fig:U_M_1Loop_BarGraph}
 \end{figure}
 
+%TOPIC: The figure and the table ✔ %FIGURE: MECHANICAL BAR GRAPH %TABLE: RESULTING EMISSIONS, 1 LOOP
+\autoref{fig:U_M_1Loop_BarGraph} and \autoref{tab:U_M_1Loop_TotalImpacts} depict the processes which contributed the most to the resulting emission on the MECHANICAL product system for a single loop.
+As seen from these results, the most significant contributor to the emissions attributed to the mechanical recycling technology is its dependence on the input of fresh materials.
+VIRGIN MATERIAL accounts for 43% of the total emissions, significantly more than the INCINERATION of discarded materials itself.
+Second on the list stands COLLECTION, attributed with 1,104 kg CO2 eq.  (30%) out of the resulting 3,670 kg CO2 eq.
+Both the figure and the table make visible the scale to which the crediting of avoided material reduces the total emission of the product system.
+Reportedly, this amount adds up to 893 kg CO2 eq for processing 1,000 kg of DKR 350 stream.
+
 %TABLE: RESULTING EMISSION, 1 LOOP MECHCNICAL
 \begin{table}[H]
 \caption{Impact analysis IPCC 2013 GMP 20a. Single Cycle, Mechanical Recycling}
 \label{tab:U_M_1Loop_TotalImpacts}
 \includegraphics[width=\textwidth]{Figures/DU_M_1Loop_TotalImpacts}
 \end{table}
+
 
 \section*{Chemical}\label{sec:chemical2}
 
@@ -32,6 +43,16 @@ This is a impact assessment hola jdlkdfjldkj
    \caption{Top 5 contributors to impact category results. Single Cycle, Chemical Recycling}
    \label{fig:U_C_1Loop_BarGraph}
 \end{figure}
+
+%TOPIC: All beauty in here. ✔ %FIGURE: CHEMCIAL Bar %TABLE: RESULTIng EMISION 1 LOOPS CHEMCIAL
+Comparably to MECHANICAL, \autoref{fig:U_C_1Loop_BarGraph} and \autoref{tab:U_C_1Loop_TotalImpacts} report on the proportion of carbon equivalent released to the environment at each of the CHEMICAL system's processes.
+These processes, even if more than those concerning MECHANICAL recycling,  amount to slightly less kg of CO2 eq.
+Ostensibly, recycling 1,000 kg of DKR 350 through CHEMICAL (Pyrolysis) technology would emit 3,417 kg of CO2 eq. to the environment.
+The LDPE PRODUCTION process emerged as the primary contributor with 39\% of the total system emissions.
+Closely after came STEAM CRACKER with 1,114 kg CO2 eq. (32\%).
+Contrary to the anticipation that STEAM CRACKER may account for the most significant emissions as it is a very energy-intensive process, it is worth remembering that the technological feature of reprocessing some of its outputs attributed to CHEMICAL recycling helps the technology to account for a reduced total.
+\autoref{tab:U_C_1Loop_TotalImpacts} enlists all the emissions related to each process.
+This table reports that the remaining credit amounted to 802.7 kg CO2 eq.(similar to MECHANICAL) even after subtracting those flows used inside each of the processes.
 
 %TABLE: RESULTING EMISSION, 1 LOOP CHEMICAL
 \begin{table}[H]
@@ -44,14 +65,7 @@ This is a impact assessment hola jdlkdfjldkj
 \clearpage
 \section{Three Loops}\label{sec:threeresults}
 
-\section*{Mechanical}\label{sec:mechanical4}
-
-%%FIGURE: MECHANICAL Bar GRaphs 3 LOOPS
-%\begin{figure}[H]{\textwidth}
-%   \includegraphics[width=1\linewidth]{Figures/DU_M_3Loops_BarGraph}
-%   \caption{Top 5 contributors to impact category results. Three Cycles, Mechanical Recycling}
-%   \label{fig:U_M_OPEN_MODEl}
-%\end{figure}
+\section*{Mechanical and Chemical}\label{sec:mechanical4}
 
 %TABLE: RESULTING EMISSION, 3 LOOPS MECHCNICAL
 \begin{table}[H]
@@ -60,16 +74,19 @@ This is a impact assessment hola jdlkdfjldkj
 \includegraphics[width=\textwidth]{Figures/DU_M_3Loops_TotalImpacts}
 \end{table}
 
+%TOPIC: THIS ✔
+Expanding the simulation into the intended three-loop system accentuated the characteristical limitations of each technology.
+\autoref{tab:mechanicalImpactAnalisis3F} and \autored{tab:chemcialImpactAnalisis3F} show the accumulated carbon-equivalent  emissions at each of the product system being compared.
+When sequenced three times, MECHANICAL accumulated 9,422 kg of CO2 eq associated with processing 1,000 kg of DKR 350.
+Meanwhile, CHEMICAL accomplished the same task with the collateral of 5,347 kg of CO2 eq.
 
-
-\section*{Chemical}\label{sec:chemical4}
-
-%%FIGURE: CHEMICAL Bar GRaphs 3 LOOPS
-%\begin{figure}[H]{\textwidth}
-%   \includegraphics[width=1\linewidth]{Figures/DU_C_3Loops_BarGraphs}
-%   \caption{Top 5 contributors to impact category results. Three Cycles, Chemical Recycling}
-%   \label{fig:U_C_OPEN_MODEl}
-%\end{figure}
+%TOPIC: AND THAT ✔
+As discussed, this is related to the crediting methodology that was utilized.
+However, it also speaks of the inevitable circumstance of CHEMICAL being more efficient at reducing and repurposing the input product mass.
+As MECHANICAL endures a percentual replenishment of virgin materials, each cycle remains to operate with extensive material amounts.
+On the other hand, CHEMICAL ensures to continue reducing the output amount to a fraction that burdens less and less carbon emission at every iteration.
+This effect is observable in their corresponding impact analyses.
+Whereas VIRGIN MATERIAL will remain the highest emitting process across the three cycles at MECHANICAL, CHEMICAL's LDPE PRODUCTION process sets to release ever so less at every cycle.
 
 %TABLE: RESULTING EMISSION, 3 LOOPS MECHCNICAL
 \begin{table}[H]

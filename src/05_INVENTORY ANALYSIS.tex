@@ -109,11 +109,12 @@ the one sent to incineration and the one sent to recycling.
 Similarly, a material transformation occurs in every unit process.
 This out-turn is typical and would reduce product outcomes at recycling LCAs.
 
-%TOPIC: The crediting system ✔
+%TOPIC: The crediting system ✔ %TABLE: INTERMEDIATE FLOWs 1LOOP MECHANICAL
 Also visible from \autoref{tab:my-tableBUYA} is the implementation of a credit mechanism.
 The mark TRUE under 'avoided product' signals the software to discount the emissions related to that stream, hence the negative sign in \autoref{tab:mechanicalintermediateflows}.
 The utilization of this crediting system replicates the avoided burden approach suggested by the governmental guidelines.
-
+\autoref{tab:mechanicalintermediateflows} also enlists the resulting mass balance across the process based on the simulated input.
+It can be noticed that under modelled conditions, the MECHANICAL product system finishes its processing with 85\% remaining from the original material input.
 
 \clearpage
 \section*{Chemical}\label{sec:chemical}
@@ -253,6 +254,11 @@ As aforementioned, the computative recreation of a three-loop system was achieve
 Three copies of the primary process sequences were connected one after the other at COLLECTION towards SORTING without considerable material losses.
 \autoref{fig:U_M_CompuModel} also reinstates the ascription of the credits assigned at the MOULDING process for each of the cycles.
 
+%TOPIC: About the total mass flow ✔ %TABLE: Mass FLow, 3 cycles, Mechanical Recycling
+\autoref{tab:mechanicalintermediateflows3F}, at the very bottom, accounts for a total of 783.2 kg of avoided plastic material.
+However, material-wise, these three iterations of mechanical recycling rely on the supply of 1,392.3 virgin materials.
+That is almost as double what it initially "avoided".
+
 %TABLE: Intemediate flows at 3 loops, mechanical recycling
 \begin{table}[H]
 \caption{Intermediate flows at three cycles, Mechanical Recycling}
@@ -260,10 +266,7 @@ Three copies of the primary process sequences were connected one after the other
 \includegraphics[width=\textwidth]{Figures/DT_M_3Loops_MASSFFLOW}
 \end{table}
 
-%TOPIC: About the total mass flow ✔ %TABLE: Mass FLow, 3 cycles, Mechanical Recycling
-\autoref{tab:mechanicalintermediateflows3F}, at the very bottom, accounts for a total of 783.2 kg of avoided plastic material.
-However, material-wise, these three iterations of mechanical recycling rely on the supply of 1,392.3 virgin materials.
-That is almost as double what it initially "avoided".
+
 
 \section*{Chemical}\label{sec:chemical3}
 
@@ -273,6 +276,15 @@ That is almost as double what it initially "avoided".
    \caption{Computational representation of multi cycle chemical recycling}
    \label{fig:U_C_CompuModel}
 \end{figure}
+
+%TOPIC: CHEMICAL is the best ✔ %FIGURE: CHEMICAL COMPUTATIONAL MODEL %TABLE: INTERMEDIATE FLWO AT # LOOPS
+Similar to the MECHANICAL, the CHEMICAL three-loop simulation connected the last process of the previous cycle to the first one of the next.
+A direct one-to-one ratio was considered.
+It is relevant to remember that an assumption was made indicating that this plastic may not very specifically be the same.
+These inter-cycle connections aim to model the conservancy of the mass, even if, in reality, the material is anew.
+As evident from \autoref{fig:U_C_CompuModel} a more significant amount of product flows are attributed to this technology.
+Whether in units of energy or mass, chemical recycling accomplishes a more excellent retrieval of material attributes.
+Overall, and reckoned at \autoref{tab:chemicalintermediateflows3F}, CHEMICAL recycling does a better job of reclaiming and achieving the substitution of fresh materials.
 
 %TABLE: Intemediate flows at 3 loops, Chemical recycling
 \begin{table}[H]
