@@ -1,46 +1,109 @@
-\chapter{Interpretation}\label{ch:interpretation}
+\chapter{Sensitivity Analysis}\label{ch:interpretation}
 
-%TABLE: FINAL Results
-%% Please add the following required packages to your document preamble:
-%% \usepackage{booktabs}
-%% \usepackage{graphicx}
-%\begin{table}[]
-%\centering
-%\caption{Final Results}
-%\label{tab:my-tableloquas}
-%\resizebox{\textwidth}{!}{%
-%\begin{tabular}{@{}lcccc@{}}
-%\toprule
-%                    & \multicolumn{2}{c}{\textbf{Single Cycle}}                                                                                        & \multicolumn{2}{c}{\textbf{Three Cycles}}                                                                                        \\
-%                    & \begin{tabular}[c]{@{}c@{}}Emissions\\ \[[kg CO2 eq{]}\end{tabular} & \begin{tabular}[c]{@{}c@{}}Material Output\\ {[}kg{]}\end{tabular} & \begin{tabular}[c]{@{}c@{}}Emissions\\ {[}kg CO2 eq{]}\end{tabular} & \begin{tabular}[c]{@{}c@{}}Material Output\\ {[}kg{]}\end{tabular} \\ \midrule
-%\textbf{MECHANICAL} & 3,760                                                           & 850                                                            & 9,422                                                           & 610                                                            \\
-%\textbf{CHEMICAL}   & 3,417                                                           & 400                                                            & 5,347                                                           & 65                                                             \\ \bottomrule
-%\end{tabular}%
-%}
-%\end{table}
+%TOPIC: INTRO TO SENTISITYVYT
+The purpose of this section is to study the resulting alternatives to the initial modelling by considering alternative assumptions.
+Two alternatives are presented.
+ALT1. 100\% RECYCLED is defined by assuming that the MOULDING process from the MECHANICAL product system uses 100\% of recycled material.
+This, also with the caveat that the only alternative after second-loop SORTING is INCINERATION.
+There is not a third cycle.
+All the collected products at the end of the first cycle are sorted and then directly burned.
+This alternative is an example of some specific products like recycled-plastic trash bags.
+Secondly, 100\% VIRGIN showcases the resulting emissions from not utilizing any recycling methodology.
 
-%TABLE: CORRECTED
-% Please add the following required packages to your document preamble:
-% \usepackage{booktabs}
-% \usepackage{graphicx}
-\begin{table}[]
-\centering
-\caption{Final Results}
-\label{tab:my-tableloquas}
-\resizebox{\textwidth}{!}{%
-\begin{tabular}{@{}lcc@{}}
-\toprule
-                    & \textbf{Single Cycle}                                           & \textbf{Three Cycles}                                           \\
-                    & \begin{tabular}[c]{@{}c@{}}Emissions\\ {[}kg CO2 eq{]}\end{tabular} & \begin{tabular}[c]{@{}c@{}}Emissions\\ {[}kg CO2 eq{]}\end{tabular} \\ \midrule
-\textbf{MECHANICAL} & 3,760                                                           & 9,422                                                           \\
-\textbf{CHEMICAL}   & 3,417                                                           & 5,347                                                           \\ \bottomrule
-\end{tabular}%
-}
+\section*{ALT1 100\% RECYCLED}\label{sec:mechanical4}
+%FIGURE: R_SANKEY
+\begin{figure}[H]{\textwidth}
+   \includegraphics[width=1\linewidth]{Figures/Z_100Recycled_SingleLoop_Sankey}
+   \caption{Sankey Diagram ALT1 100\% RECYCLED}
+   \label{fig:R_SANKEY}
+\end{figure}
+
+%TABLE: R_MASS FLOW
+\begin{table}[H]
+\caption{Intermediate Flow for ALT1 100\% Recycled}
+\label{tab:R_MASSFLOW}
+\includegraphics[width=\textwidth]{Figures/Z_100Recycled_SingleLoop_MassFlow}
+\end{table}
+
+%TOPIC: BLA
+\autoref{fig:R_SANKEY} and \autoref{tab:R_MASSFLOW}
+enlist and showcase the mass flow on this alternative scenario.
+In contrast to the original MECHANICAL simulation, there is a significant reduction in the input mass.
+The leftover product at the end of the first loop is only 350kg.
+However, considering these results contemplate a subsequent and final INCINERATION, the released carbon emissions are higher, even after their corresponding credit.
+\autoref{fig:R_BAR} and \autoref{tab:R_EMISSION} expose the increase in the total credits granted to the system and the change of the main contributor from being VIRGIN MATERIAL to now being the SORTED process.
+1,134 kg of CO2 eq is attributed to this alternative.
+
+%FIGURE: R_BAR
+\begin{figure}[H]{\textwidth}
+   \includegraphics[width=1\linewidth]{Figures/Z_100Recycled_SingleLoop_BarChart}
+   \caption{Top 5 contributors to impact category results. Single Cycle, ALT1 100\% Recycled}
+   \label{fig:R_BAR}
+\end{figure}
+
+%TABLE: R_EMISSION
+\begin{table}[H]
+\caption{Impact analysis IPCC 2013 GMP 20a. Single Cycle, ALT1 100\% Recycled}
+\label{tab:R_EMISSION}
+\includegraphics[width=\textwidth]{Figures/Z_100Recycled_SingleLoop_Emissions}
 \end{table}
 
 
-%TOPIC: YA, se acabo
-Even if inherently different, mechanical and chemical recycling technologies provide a kindred solution to the increasing torrent of plastic waste.
-\autoref{tab:my-tableloquas} summarizes the abide material output after three consecutive recycling iterations of a 1,000 kg DKR 350 plastic stream and the equivalent carbon emissions attributes to each of these technologies.
-As a matter of course, both of these technologies bear distinct advantages and disadvantages that may otherwise make them preferable under specific conditions.
-However, as demonstrated in this multi-life cycle assessment, chemical recycling appears less impactful in both the leftover material residue and the inexorable carbon emissions released onto the environment.
+\section*{ALT2 100\% VIRGIN}\label{sec:mechanical4}
+%FIGURE: V_SANKEY
+\begin{figure}[H]{\textwidth}
+   \includegraphics[width=1\linewidth]{Figures/Z_100Virgin_SingleLoops_SAnkey}
+   \caption{Sankey Diagram ALT2 100\% Virgin}
+   \label{fig:V_SANKEY}
+\end{figure}
+
+%TABLE: V_MASSFLOW
+\begin{table}[H]
+\caption{Intermediate Flows for ALT2 100\% Virgin}
+\label{tab:V_MASSFLOW}
+\includegraphics[width=\textwidth]{Figures/Z_100Virgin_SingleLoops_MassFlow}
+\end{table}
+
+%FIGURE: V_BAR
+\begin{figure}[H]{\textwidth}
+   \includegraphics[width=1\linewidth]{Figures/Z_100Virgin_SIngleLoops_BarChart}
+   \caption{Top 5 contributors to impact category results. Single Cycle, ALT2 100\% Virgin}
+   \label{fig:V_BAR}
+\end{figure}
+
+%TABLE: V_EMISSIONS
+\begin{table}[H]
+\caption{Impact analysis IPCC 2013 GMP 20a. Single Cycle, ALT2 100\% Virgin}
+\label{tab:V_EMISSION}
+\includegraphics[width=\textwidth]{Figures/Z_100Virgin_SingleLoop_Emissions}
+\end{table}
+
+%TOPIC: AVOIDANCE IS RECOMENDED :)
+ALT2 100\%VIRGIN considered an additional possibility, the case for non-participating in any recycling practice.
+\autoref{fig:V_SANKEY} and \autoref{tab:V_MASSFLOW} detail in a much simpler product sytem.
+No reduction in mass is considered.
+Interestingly, although unsurprising, the total carbon emission related to a single cycle with 100\% virgin material is the highest across all scenarios.
+5,243 kg of CO2 eq is attributed to the manufacturing, MOULDING and subsequent COLLECTION of 1,000 kg of LDPE plastic product.
+\autoref{tab:my-final} shows these resulting values compared to the original considerations on this LCA.
+Reinstated in \autoref{fig:V_BAR} and \autoref{tab:V_EMISSION}, the enduring utilization of virgin material in the production of LDPE plastic products is clear to have the most significant carbon emission and the utmost impact on the environment.
+Its avoidance is recommended.
+
+%TABLE: NEW FINAL RESULTS
+% Please add the following required packages to your document preamble:
+% \usepackage{graphicx}
+\begin{table}[H]
+\centering
+\caption{Final Results}
+\label{tab:my-final}
+%resizebox{\textwidth}{!}{%
+\begin{tabular}{lcc}
+\hline
+                    & \textbf{Single Cycle}                                           & \textbf{Three Cycles}                                           \\
+                    & \begin{tabular}[c]{@{}c@{}}Emissions\\ {[}kg CO2 eq{]}\end{tabular} & \begin{tabular}[c]{@{}c@{}}Emissions\\ {[}kg CO2 eq{]}\end{tabular} \\ \hline
+\textbf{MECHANICAL} & 3,760                                                           & 9,422                                                           \\
+\textbf{CHEMICAL}   & 3,417                                                           & 5,347                                                           \\ \hline
+ALT1 100\% RECYCLED & 1,134                                                           & \multicolumn{1}{l}{}                                            \\
+ALT2 100\%VIRGIN    & 5,243                                                           & \multicolumn{1}{l}{}
+\end{tabular}%
+%}
+\end{table}
