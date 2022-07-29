@@ -1,6 +1,8 @@
 \documentclass[10pt,oneside]{book}
 \usepackage[utf8]{inputenc}
 
+\usepackage{transparent}
+\usepackage{eso-pic}
 \usepackage{multirow}
 \usepackage[bottom]{footmisc}
 \usepackage[export]{adjustbox}
@@ -34,9 +36,9 @@
 
 \fancypagestyle{myheader}{%
   \fancyhf{}% Clear all headers/footers
-  %\fancyhead[L]{\includegraphics[width=5cm]{Figures/Picture1}}% Header Centred
+  \fancyhead[L]{\transparent{.4}Blue Cycle - Multi Life Cycle Assessment}% Header Centred
   %\fancyhead[L]{2022.05.19}
-  \fancyhead[R]{2022.06.03\quad Deliverable 02}
+  \fancyhead[R]{\includegraphics[width=2.5cm]{Figures/BR ENERGY}}
   \fancyfoot[C]{\thepage}% Footer Centred
   %\fancyfoot[C]{\textcolor{UniPurple}{www.unipartners.nl}}
   \renewcommand{\headrulewidth}{0pt}% 2pt header rule
@@ -67,7 +69,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \title{Multi-Life Cycle Assessment}
 \author{BR Energy for Blue Cycle\\ Alberto Rosas}
-\date{May, 2022}
+\date{July, 2022}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{document}
 %%%%
@@ -82,11 +84,12 @@
 \newpage \include{05_INVENTORY ANALYSIS}
 \newpage \include{06_IMPACT ASSESSMENT}
 \newpage \include{07_INTERPRETATION}
+\newpage \include{08_ADDITION}
 %\newpage \include{08_Conclusions}
 %%%%%%%%%%%%%%%%%%%%% BIBLIOGRAPHY
 \bibliographystyle{plain}
 \addcontentsline{toc}{section}{References}
-\bibliography{main2}
+\bibliography{main}
 %%%%%%%%%%%%%%%%%%%%% APENDIX
 \newpage \appendix
 \vspace*{\fill}
